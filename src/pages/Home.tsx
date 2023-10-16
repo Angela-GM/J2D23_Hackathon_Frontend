@@ -4,11 +4,11 @@ import Main from "../components/Main"
 
 function Home() {
   return (
-    <>
+    <div className="container h-screen">
     <Header />
     <Main />
     <Footer />
-    </>
+    </div>
   )
 }
 

@@ -29,10 +29,10 @@ function Main() {
   };
 
   return (
-    <div>
+    <main>
       <h1>Personajes</h1>
       <button onClick={hadleChangePage}>Muestra mas</button>
-    </div>
+    </main>
   );
 }
 
