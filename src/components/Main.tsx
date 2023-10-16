@@ -47,9 +47,15 @@ function Main() {
     <main>
       <h1>Personajes</h1>
 
-      {allCharacters.results && allCharacters.results.map((character) => (
-  <div key={character.id}>{character.name}</div>
-))}
+      {isLoading ? (
+  <div>Loading...</div>
+) : (
+  <div>
+    {allCharacters.results && allCharacters.results.map((character) => (
+      <div key={character.id}>{character.name}</div>
+    ))}
+  </div>
+)}
 
 <div className="flex items-center gap-6 justify-center py-10">
 
