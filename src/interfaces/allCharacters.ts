@@ -1,11 +1,11 @@
-interface Info {
-    count: number;
-    pages: number;
-    next: string;
-    prev?: string;
+export interface Info {
+    // count: number;
+    // pages: number;
+    next: string | null;
+    prev: string | null;
 }
 
-interface Results {
+export interface Results {
     id: number;
     name: string;
     status: string;
@@ -15,7 +15,7 @@ interface Results {
 }
 
 export interface AllCharacters {
-    info: Info[];
+    info: Info;
     results: Results[];
 
 }
