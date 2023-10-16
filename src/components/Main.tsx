@@ -6,8 +6,6 @@ function Main() {
   // Crear interface de allCharacters
   const [allCharacters, setAllCharacters] = useState<AllCharacters>({
     info: {
-      // count: 826, 
-      // pages: 0, 
       next: "", 
       prev: "", 
     },
@@ -15,6 +13,11 @@ function Main() {
   });
   const [page, setPage] = useState(2);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const handleSearchQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
 
 
   useEffect(() => {
@@ -45,6 +48,16 @@ function Main() {
 
   return (
     <main>
+
+
+        <input 
+          type="text"
+          value={searchQuery}
+          onChange={handleSearchQuery}
+          placeholder="Buscar personaje..."
+        />
+
+
       <h1>Personajes</h1>
 
       {isLoading ? (
