@@ -19,7 +19,6 @@ function Main() {
   };
 
 
-// Tengo que hacer la llamada al nuevo servicio para buscar por name
 
   useEffect(() => {
     // llamada al servicio de api apiClient y guardar la informacion en allCharacters
@@ -54,7 +53,7 @@ function Main() {
     <main>
 
 
-        <input 
+        <input className="rounded py-1 px-2 w-2/3"
           type="text"
           value={searchQuery}
           onChange={handleSearchQuery}
