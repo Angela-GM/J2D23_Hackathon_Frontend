@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllCharacters } from "../services/characters";
+import { getAllCharacters, searchCharacters } from "../services/characters";
 import { AllCharacters } from "../interfaces/allCharacters";
 
 function Main() {
@@ -19,12 +19,16 @@ function Main() {
   };
 
 
+// Tengo que hacer la llamada al nuevo servicio para buscar por name
 
   useEffect(() => {
     // llamada al servicio de api apiClient y guardar la informacion en allCharacters
     const fetchCharacters = async () => {
       try {
-        const response = await getAllCharacters(page);
+        let response;
+        searchQuery === ""
+        ? response = await getAllCharacters(page)
+        : response = await searchCharacters(searchQuery)
         const data = response.data;
         setAllCharacters(data);
       } catch (error) {
@@ -35,7 +39,7 @@ function Main() {
     };
 
     fetchCharacters();
-  }, [page]);
+  }, [page, searchQuery]);
   console.log(allCharacters);
 
   const hadleChangePage = (e:React.MouseEvent<HTMLButtonElement>) => {
