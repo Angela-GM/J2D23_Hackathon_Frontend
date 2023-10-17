@@ -53,7 +53,7 @@ function Main() {
     <main>
 
 
-        <input className="rounded py-1 px-2 w-2/3"
+        <input className="rounded py-1 px-2 w-2/3 my-4"
           type="text"
           value={searchQuery}
           onChange={handleSearchQuery}
