@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { getAllCharacters, searchCharacters } from "../services/characters";
 import { AllCharacters } from "../interfaces/allCharacters";
+import { Search } from "lucide-react";
 
 function Main() {
   // Crear interface de allCharacters
   const [allCharacters, setAllCharacters] = useState<AllCharacters>({
     info: {
-      next: "", 
-      prev: "", 
+      next: "",
+      prev: "",
     },
     results: [],
   });
@@ -18,16 +19,14 @@ function Main() {
     setSearchQuery(event.target.value);
   };
 
-
-
   useEffect(() => {
     // llamada al servicio de api apiClient y guardar la informacion en allCharacters
     const fetchCharacters = async () => {
       try {
         let response;
         searchQuery === ""
-        ? response = await getAllCharacters(page)
-        : response = await searchCharacters(searchQuery)
+          ? (response = await getAllCharacters(page))
+          : (response = await searchCharacters(searchQuery));
         const data = response.data;
         setAllCharacters(data);
       } catch (error) {
@@ -41,7 +40,7 @@ function Main() {
   }, [page, searchQuery]);
   console.log(allCharacters);
 
-  const hadleChangePage = (e:React.MouseEvent<HTMLButtonElement>) => {
+  const hadleChangePage = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (e.currentTarget.value === "Retroceder" && page > 1) {
       setPage(page - 1);
     } else if (e.currentTarget.value === "Avanzar" && page < 41) {
@@ -51,33 +50,49 @@ function Main() {
 
   return (
     <main>
-
-
-        <input className="rounded py-1 px-2 w-2/3 my-4"
-          type="text"
-          value={searchQuery}
-          onChange={handleSearchQuery}
-          placeholder="Buscar personaje..."
-        />
+     <div className="relative">
+  <div className="flex items-center">
+    <input
+      className="rounded py-1 px-2 flex-grow my-4 mx-10"
+      type="text"
+      value={searchQuery}
+      onChange={handleSearchQuery}
+      placeholder="Buscar personaje..."
+    />
+    <Search style={{ position: "absolute", right: "47px", top: "30%" }} />
+  </div>
+</div>
 
 
       <h1>Personajes</h1>
 
       {isLoading ? (
-  <div>Loading...</div>
-) : (
-  <div>
-    {allCharacters.results && allCharacters.results.map((character) => (
-      <div key={character.id}>{character.name}</div>
-    ))}
-  </div>
-)}
+        <div>Loading...</div>
+      ) : (
+        <div>
+          {allCharacters.results &&
+            allCharacters.results.map((character) => (
+              <div key={character.id}>{character.name}</div>
+            ))}
+        </div>
+      )}
 
-<div className="flex items-center gap-6 justify-center py-10">
-
-      <button className="bg-amber-300 py-1 px-2 rounded" onClick={hadleChangePage} value="Retroceder">Retroceder</button>
-      <button className="bg-amber-300 py-1 px-2 rounded" onClick={hadleChangePage} value="Avanzar">Avanzar</button>
-</div>
+      <div className="flex items-center gap-6 justify-center py-10">
+        <button
+          className="bg-amber-300 py-1 px-2 rounded"
+          onClick={hadleChangePage}
+          value="Retroceder"
+        >
+          Retroceder
+        </button>
+        <button
+          className="bg-amber-300 py-1 px-2 rounded"
+          onClick={hadleChangePage}
+          value="Avanzar"
+        >
+          Avanzar
+        </button>
+      </div>
     </main>
   );
 }
