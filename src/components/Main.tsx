@@ -54,15 +54,16 @@ function Main() {
       <div className="relative">
         <div className="flex items-center">
           <input
-            className="rounded py-1 px-2 flex-grow my-4 mx-10"
+            className="rounded-2xl py-2 px-4 flex-grow my-4 mx-12 bg-cardBackgroundColor text-white placeholder:text-green-200
+            "
             type="text"
             value={searchQuery}
             onChange={handleSearchQuery}
             placeholder="Buscar personaje..."
           />
           <Search
-            className="w-5"
-            style={{ position: "absolute", right: "47px", top: "30%" }}
+            className="w-5 text-green-200"
+            style={{ position: "absolute", right: "60px", top: "30%" }}
           />
         </div>
       </div>
