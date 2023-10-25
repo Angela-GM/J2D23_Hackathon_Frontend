@@ -67,7 +67,7 @@ function Main() {
         </div>
       </div>
 
-      <h1 className="text-white font-bold text-xl text-start">Lista de personajes</h1>
+      <h1 className="text-white font-bold text-3xl text-start px-2 flex-grow my-4 mx-10">Lista de personajes</h1>
 
       {isLoading ? (
         <div>Loading...</div>

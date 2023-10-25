@@ -3,12 +3,16 @@ export interface Info {
     prev: string | null;
 }
 
+interface Origin {
+    name: string,
+    url: string
+}
 export interface Results {
     id: number;
     image: string;
     species: string;
     name: string;
-    status: string;
+    origin: Origin;
     type: string;
     gender: string;
     

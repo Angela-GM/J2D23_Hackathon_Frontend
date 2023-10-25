@@ -8,7 +8,9 @@ export default {
     extend: { 
       colors: {
         backgroundColor: "#0E393F",
-        cardBackgroundColor: "#0D7C85"
+        cardBackgroundColor: "#0D7C85",
+        borderColorHover: "#BFDE42",
+        borderColor: "#36382c",
       }
        },
   },
