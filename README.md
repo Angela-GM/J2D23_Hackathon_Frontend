@@ -4,6 +4,10 @@
 
 Este proyecto es una aplicación web que muestra información sobre los personajes de la serie "Rick y Morty" utilizando una API pública. La interfaz de usuario es amigable, atractiva y completamente responsiva.
 
+## Insignias
+
+   ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
+   
 ## Captura de Pantalla
 
 ![Captura de Pantalla](/screenshot.png)
