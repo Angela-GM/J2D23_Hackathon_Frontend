@@ -10,7 +10,7 @@ Este proyecto es una aplicación web que muestra información sobre los personaj
    
 ## Captura de Pantalla
 
-![Captura de Pantalla](/screenshot.png)
+![Alt text](/public/captura.png)
 
 ## Características
 
