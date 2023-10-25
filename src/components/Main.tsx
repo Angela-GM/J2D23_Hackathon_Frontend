@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllCharacters, searchCharacters } from "../services/characters";
 import { AllCharacters } from "../interfaces/allCharacters";
 import { Search } from "lucide-react";
+import Card from "./ui/Card";
 
 function Main() {
   // Crear interface de allCharacters
@@ -50,39 +51,28 @@ function Main() {
 
   return (
     <main>
-     <div className="relative">
-  <div className="flex items-center">
-    <input
-      className="rounded py-1 px-2 flex-grow my-4 mx-10"
-      type="text"
-      value={searchQuery}
-      onChange={handleSearchQuery}
-      placeholder="Buscar personaje..."
-    />
-    <Search className="w-5" style={{ position: "absolute", right: "47px", top: "30%" }} />
-  </div>
-</div>
+      <div className="relative">
+        <div className="flex items-center">
+          <input
+            className="rounded py-1 px-2 flex-grow my-4 mx-10"
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchQuery}
+            placeholder="Buscar personaje..."
+          />
+          <Search
+            className="w-5"
+            style={{ position: "absolute", right: "47px", top: "30%" }}
+          />
+        </div>
+      </div>
 
-
-      <h1>Personajes</h1>
+      <h1 className="text-white font-bold text-xl text-start">Lista de personajes</h1>
 
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div className="flex flex-wrap gap-2"> 
-          {allCharacters.results &&
-            allCharacters.results.map((character) => (
-              <div className="bg-cardBackgroundColor">
-                <img src={character.image} alt={character.name} />
-                <div key={character.id}>{character.name}</div>
-                <small>{character.species}</small>
-                <p>{character.status}</p>
-                
-              </div>
-              
-            
-            ))}
-        </div>
+        <Card characters={allCharacters.results} />
       )}
 
       <div className="flex items-center gap-6 justify-center py-10">
