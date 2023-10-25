@@ -6,7 +6,7 @@ interface CardProps {
 
 function Card({ characters }: CardProps) {
   return (
-    <div className="grid grid-cols-4 gap-x-11 gap-y-8 text-white py-10 px-2 flex-grow my-4 mx-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-11 gap-y-8 text-white py-10 px-2 my-4 mx-10">
       {characters.map((character: Results) => (
         <div
           className="bg-cardBackgroundColor relative rounded-md  border-borderColor hover:border-borderColorHover border-2 shadow-xl"

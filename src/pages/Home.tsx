@@ -4,7 +4,7 @@ import Main from "../components/Main"
 
 function Home() {
   return (
-    <div className="container h-screen">
+    <div className="container h-screen mx-auto">
     <Header />
     <Main />
     <Footer />

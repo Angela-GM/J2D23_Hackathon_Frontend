@@ -71,12 +71,12 @@ function Main() {
       <h1 className="text-white font-bold text-3xl text-start px-2 flex-grow my-4 mx-10">Lista de personajes</h1>
 
       {isLoading ? (
-        <div>Loading...</div>
+        <div className="text-center">Loading...</div>
       ) : (
         <Card characters={allCharacters.results} />
       )}
 
-      <div className="flex items-center gap-6 justify-center py-10">
+      <div className="flex flex-col items-center md:flex-row gap-6 justify-center py-10">
         <button
           className="bg-amber-300 py-1 px-2 rounded"
           onClick={hadleChangePage}
