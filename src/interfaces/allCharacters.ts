@@ -1,4 +1,5 @@
 export interface Info {
+    pages: number;
     next: string | null;
     prev: string | null;
 }

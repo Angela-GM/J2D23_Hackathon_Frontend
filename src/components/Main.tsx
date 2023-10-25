@@ -10,6 +10,7 @@ function Main() {
     info: {
       next: "",
       prev: "",
+      pages: 0
     },
     results: [],
   });
@@ -84,6 +85,10 @@ function Main() {
         >
           Retroceder
         </button>
+        <p className="text-white">
+
+        Página {page} de {allCharacters.info.pages}
+        </p>
         <button
           className="bg-amber-300 py-1 px-2 rounded"
           onClick={hadleChangePage}

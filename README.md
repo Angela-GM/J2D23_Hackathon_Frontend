@@ -46,13 +46,6 @@ Para probar el proyecto, siga los siguientes pasos:
    npm install
    ```
 
-<!-- 
-3. **Ejecución de pruebas unitarias**: Ejecute `npm run test` para ejecutar las pruebas unitarias con Vitest.
-
-   ```bash
-   npm run test
-   ``` -->
-
 3. **Iniciar la aplicación**: Ejecute `npm run dev` para iniciar la aplicación en modo de desarrollo.
 
    ```bash
