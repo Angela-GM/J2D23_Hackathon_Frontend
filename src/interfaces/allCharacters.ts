@@ -5,6 +5,8 @@ export interface Info {
 
 export interface Results {
     id: number;
+    image: string;
+    species: string;
     name: string;
     status: string;
     type: string;

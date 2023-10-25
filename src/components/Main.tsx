@@ -59,7 +59,7 @@ function Main() {
       onChange={handleSearchQuery}
       placeholder="Buscar personaje..."
     />
-    <Search style={{ position: "absolute", right: "47px", top: "30%" }} />
+    <Search className="w-5" style={{ position: "absolute", right: "47px", top: "30%" }} />
   </div>
 </div>
 
@@ -69,10 +69,18 @@ function Main() {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div>
+        <div className="flex flex-wrap gap-2"> 
           {allCharacters.results &&
             allCharacters.results.map((character) => (
-              <div key={character.id}>{character.name}</div>
+              <div className="bg-cardBackgroundColor">
+                <img src={character.image} alt={character.name} />
+                <div key={character.id}>{character.name}</div>
+                <small>{character.species}</small>
+                <p>{character.status}</p>
+                
+              </div>
+              
+            
             ))}
         </div>
       )}
