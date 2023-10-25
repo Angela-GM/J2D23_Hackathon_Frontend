@@ -2,7 +2,7 @@
 
 ![Rick and Morty](https://rickandmortyapi.com/api/character/avatar/1.jpeg)
 
-Este proyecto es una aplicación web que muestra información sobre los personajes de la serie "Rick y Morty" utilizando una API pública. La interfaz de usuario es amigable, atractiva y completamente responsiva.
+Este proyecto es una aplicación web que muestra información sobre los personajes de la serie "Rick y Morty" utilizando una API pública. 
 
 ## Insignias
 
