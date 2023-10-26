@@ -14,7 +14,7 @@ function Main() {
     },
     results: [],
   });
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const handleSearchQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
