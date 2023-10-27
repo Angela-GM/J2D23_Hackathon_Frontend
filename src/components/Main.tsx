@@ -19,6 +19,7 @@ function Main() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const handleSearchQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
+    setPage(1)
   };
 
   useEffect(() => {
@@ -28,7 +29,7 @@ function Main() {
         let response;
         searchQuery === ""
           ? (response = await getAllCharacters(page))
-          : (response = await searchCharacters(searchQuery));
+          : (response = await searchCharacters(searchQuery, page));
         const data = response.data;
         setAllCharacters(data);
       } catch (error) {
@@ -43,12 +44,23 @@ function Main() {
   console.log(allCharacters);
 
   const hadleChangePage = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if( page != allCharacters.info.pages ) {    
     if (e.currentTarget.value === "Retroceder" && page > 1) {
       setPage(page - 1);
     } else if (e.currentTarget.value === "Avanzar" && page < 41) {
       setPage(page + 1);
     }
+  } else {
+    if (e.currentTarget.value === "Retroceder" && page > 1) {
+      setPage(page - 1);
+    } else  {
+      console.log("no hay mas páginas");
+      
+    }
+    
+  }
   };
+
 
   return (
     <main>
@@ -74,6 +86,8 @@ function Main() {
       {isLoading ? (
         <div className="text-center">Loading...</div>
       ) : (
+        
+
         <Card characters={allCharacters.results} />
       )}
 
