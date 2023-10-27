@@ -6,8 +6,8 @@ export const getAllCharacters = async (page:number) => {
 
 
 export const searchCharacters = async (name: string, page: string) => {
-    parseInt(page)
-    return apiClient.get(`character/?page=${page}&name=${name}`)
+    const pageNumber = parseInt(page, 10)
+    return apiClient.get(`character/?page=${pageNumber}&name=${name}`)
 }
 
 export const getAllCharacterDetailsById = async (id: string | undefined) => {

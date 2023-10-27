@@ -29,7 +29,7 @@ function Main() {
         let response;
         searchQuery === ""
           ? (response = await getAllCharacters(page))
-          : (response = await searchCharacters(searchQuery, page));
+          : (response = await searchCharacters(searchQuery, page.toString()));
         const data = response.data;
         setAllCharacters(data);
       } catch (error) {
