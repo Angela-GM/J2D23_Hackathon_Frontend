@@ -11,7 +11,7 @@ function Card({ characters }: CardProps) {
       {characters.map((character: Results) => (
         <Link to={`/detail/${character.id}`} key={character.id}>
           <div
-            className="bg-cardBackgroundColor relative rounded-md  border-borderColor hover:border-borderColorHover border-2 shadow-xl"
+            className="bg-cardBackgroundColor relative rounded-md  border-borderColor hover:border-borderColorHover border-2 shadow-xl h-full"
             key={character.id}
           >
             <div className="relative">
