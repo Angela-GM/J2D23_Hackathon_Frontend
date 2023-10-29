@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllCharacters, searchCharacters } from "../services/characters";
 import { AllCharacters } from "../interfaces/allCharacters";
-import { Search } from "lucide-react";
+import { ChevronLeftCircle, ChevronRightCircle, Search } from "lucide-react";
 import Card from "./ui/Card";
 
 function Main() {
@@ -91,13 +91,15 @@ function Main() {
         <Card characters={allCharacters.results} />
       )}
 
-      <div className="flex flex-col items-center md:flex-row gap-6 justify-center py-10">
+      <div className="flex flex-col items-center md:flex-row gap-6 justify-center py-10 text-xs md:text-sm">
+        <div className="flex gap-2 items-center">
+
         <button
           className="bg-amber-300 py-1 px-2 rounded"
           onClick={hadleChangePage}
           value="Retroceder"
-        >
-          Retroceder
+          >
+           <ChevronLeftCircle />
         </button>
         <p className="text-white">
 
@@ -107,9 +109,10 @@ function Main() {
           className="bg-amber-300 py-1 px-2 rounded"
           onClick={hadleChangePage}
           value="Avanzar"
-        >
-          Avanzar
+          >
+    <ChevronRightCircle />
         </button>
+          </div>
       </div>
     </main>
   );
