@@ -22,7 +22,10 @@ function Card({ characters }: CardProps) {
               />
               <div className="p-4">
                 <div>{character.name}</div>
-                <small>{character.species}</small>
+                <small>
+                {character.species === "Human" ? "🟢" : character.species === "Alien" ? "🟣" : character.species === "Humanoid" ? "🟡" : character.species === "Animal" ? "🟤" : character.species === "Cronenberg" ? "⚫" : character.species === "Robot" ? "💿" : character.species === "Mythological Creature" ? "🌑" : character.species === "Disease" ? "🔵" : character.species === "unknown" ? "❓" : ""}
+                  
+                  {character.species}</small>
                 <p>{character.origin.name}</p>
               </div>
             </div>

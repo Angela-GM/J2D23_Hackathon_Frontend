@@ -26,6 +26,7 @@ function Detail() {
   return (
     <div>
       <h2>Detalles del personaje con ID {id}</h2>
+
      
     </div>
   );
