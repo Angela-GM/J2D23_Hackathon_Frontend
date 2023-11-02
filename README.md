@@ -25,7 +25,7 @@ Este proyecto es una aplicación web que muestra información sobre los personaj
 
 ## Despliegue en Vercel
 
-La aplicación web se ha implementado en un servidor gratuito de Vercel. https://j2-d23-hackathon-frontend-1wbghshap-angela-gm.vercel.app/
+La aplicación web se ha implementado en un servidor gratuito de Vercel. [https://j2-d23-hackathon-frontend-1wbghshap-angela-gm.vercel.app/](https://j2-d23-hackathon-frontend.vercel.app/)
 .
 
 
