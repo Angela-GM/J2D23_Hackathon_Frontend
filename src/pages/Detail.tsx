@@ -7,6 +7,8 @@ function Detail() {
   const { id } = useParams();
   const [characterDetails, setCharacterDetails] = useState<DetailCharacter>();
 
+
+
   useEffect(() => {
     const fetchCharacterDetails = async () => {
       try {
@@ -24,14 +26,21 @@ function Detail() {
     return <div>Cargando detalles del personaje...</div>;
   }
 
+  const handleBack = () => {
+    history.back();
+    
+  }
+
   return (
-    <div className="text-white flex flex-col sm:flex-row mt-10 justify-center gap-5">
+    <div>
+
+    <div className="text-white bg-cardBackgroundColor py-10 flex flex-col sm:flex-row mt-10 justify-center gap-5">
       <img
         src={characterDetails.image}
         alt={characterDetails.name}
-        className="w-1/3"
+        className="w-1/3 mx-auto sm:align-center rounded-full"
       />
-      <div>
+      <div className="mx-auto sm:align-center">
         <p>{characterDetails.name}</p>
         <p>{characterDetails.status}</p>
         <p>
@@ -68,12 +77,19 @@ function Detail() {
         <p>Orígen: {characterDetails.origin.name}</p>
         <p>Localización: {characterDetails.location.name}</p>
 
-        {/* hacer que el botón vuelva a atràs */}
-        <button className="bg-amber-300 py-1 px-2 rounded" value="Retroceder">
+       
+      </div>
+      
+      
+    </div>
+    <div className="mt-5 sm:mt-10">
+         {/* hacer que el botón vuelva a atràs */}
+         <button className="bg-amber-300 py-1 px-2 rounded" value="Retroceder" onClick={handleBack}>
           Atrás
         </button>
       </div>
     </div>
+
   );
 }
 
